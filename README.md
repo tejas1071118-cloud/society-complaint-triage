@@ -46,7 +46,7 @@ Prerequisites:
 - Git
 
 ```bash
-git clone <REPO_URL> && cd <DIRECTORY>
+git clone https://github.com/tejas1071118-cloud/society-complaint-triage.git && cd society-complaint-triage
 npm install
 # Add API_KEY to .env.local
 npm run dev
