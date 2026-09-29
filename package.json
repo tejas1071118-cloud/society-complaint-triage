@@ -1,0 +1,20 @@
+{
+  "name": "society-complaint-triage",
+  "version": "1.0.0",
+  "description": "Society Complaint Triage - Built for Vibe Coding",
+  "main": "index.js",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w frontend\" \"npm run dev -w backend\"",
+    "reset-db": "npm run reset-db -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --bg-surface-hover: #f1f5f9;
+    --border-color: #e2e8f0;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+
+    /* WCAG AA contrast colors */
+    --critical-bg: #fef2f2;
+    --critical-text: #b91c1c;
+    --critical-border: #fca5a5;
+    --critical-icon: #ef4444;
+
+    --high-bg: #fff7ed;
+    --high-text: #c2410c;
+    --high-border: #fdba74;
+    --high-icon: #f97316;
+
+    --medium-bg: #fefce8;
+    --medium-text: #a16207;
+    --medium-border: #fde047;
+    --medium-icon: #eab308;
+
+    --low-bg: #f1f5f9;
+    --low-text: #475569;
+    --low-border: #cbd5e1;
+    --low-icon: #64748b;
+  }
+
+  .dark {
+    --bg-main: #0f172a;
+    --bg-surface: #1e293b;
+    --bg-surface-hover: #334155;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+
+    --critical-bg: #450a0a;
+    --critical-text: #fca5a5;
+    --critical-border: #7f1d1d;
+    --critical-icon: #ef4444;
+
+    --high-bg: #431407;
+    --high-text: #fdba74;
+    --high-border: #7c2d12;
+    --high-icon: #f97316;
+
+    --medium-bg: #422006;
+    --medium-text: #fde047;
+    --medium-border: #713f12;
+    --medium-icon: #eab308;
+
+    --low-bg: #1e293b;
+    --low-text: #cbd5e1;
+    --low-border: #475569;
+    --low-icon: #94a3b8;
+  }
+
+  body {
+    @apply bg-background font-sans antialiased transition-colors duration-200;
+    color: var(--text-main);
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply backdrop-blur-md border border-[var(--border-color)];
+    background-color: color-mix(in srgb, var(--bg-surface) 80%, transparent);
+  }
+}
+
+.urgency-badge {
+  @apply px-2.5 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5 transition-colors duration-200;
+}
+
+.urgency-Critical {
+  @apply bg-[var(--critical-bg)] text-[var(--critical-text)] border border-[var(--critical-border)];
+}
+
+.urgency-High {
+  @apply bg-[var(--high-bg)] text-[var(--high-text)] border border-[var(--high-border)];
+}
+
+.urgency-Medium {
+  @apply bg-[var(--medium-bg)] text-[var(--medium-text)] border border-[var(--medium-border)];
+}
+
+.urgency-Low {
+  @apply bg-[var(--low-bg)] text-[var(--low-text)] border border-[var(--low-border)];
+}
+
+/* Custom Scrollbar for Drawer/Lists */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
+}
